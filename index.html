@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Oswald:wght@400;500;600;700&family=Poppins:wght@500;600&family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=23" />
+  <link rel="stylesheet" href="style.css?v=24" />
 </head>
 
 <body>
@@ -338,31 +338,25 @@
 
         <div class="videos-grid">
           <article class="video-box">
-            <div class="video-thumb" tabindex="0" role="button" aria-label="Ampliar vídeo: Aviação executiva">
-              <video muted loop playsinline preload="none" poster="aviao11.jpg">
-                <source src="voo.mp4" type="video/mp4" />
-              </video>
-            </div>
+            <video muted loop playsinline preload="none" poster="aviao11.jpg">
+              <source src="voo.mp4" type="video/mp4" />
+            </video>
             <h3>Aviação executiva</h3>
             <p>Experiência reservada, eficiente e confortável para deslocamentos com flexibilidade, discrição e pontualidade.</p>
           </article>
 
           <article class="video-box">
-            <div class="video-thumb" tabindex="0" role="button" aria-label="Ampliar vídeo: Transporte aeromédico">
-              <video muted loop playsinline preload="none" poster="equipe.jpg">
-                <source src="aeromedico.mp4" type="video/mp4" />
-              </video>
-            </div>
+            <video muted loop playsinline preload="none" poster="equipe.jpg">
+              <source src="aeromedico.mp4" type="video/mp4" />
+            </video>
             <h3>Transporte aeromédico</h3>
             <p>Compromisso com a vida: atendimento ágil e especializado, com suporte médico qualificado do embarque ao desembarque.</p>
           </article>
 
           <article class="video-box">
-            <div class="video-thumb" tabindex="0" role="button" aria-label="Ampliar vídeo: Handling e suporte">
-              <video muted loop playsinline preload="none" poster="hangar.jpg">
-                <source src="experiencia.mp4" type="video/mp4" />
-              </video>
-            </div>
+            <video muted loop playsinline preload="none" poster="hangar.jpg">
+              <source src="experiencia.mp4" type="video/mp4" />
+            </video>
             <h3>Handling e suporte</h3>
             <p>Atendimento em solo para passageiros, tripulações e aeronaves, com organização, agilidade e padrão elevado.</p>
           </article>
@@ -989,94 +983,6 @@
 
       videos.forEach(function (video) {
         observer.observe(video);
-      });
-    })();
-
-    (function () {
-      var thumbs = Array.prototype.slice.call(document.querySelectorAll(".video-thumb"));
-      if (!thumbs.length) return;
-
-      var itens = thumbs.map(function (thumb) {
-        var source = thumb.querySelector("source");
-        var video = thumb.querySelector("video");
-        return {
-          src: source ? source.getAttribute("src") : "",
-          poster: video ? video.getAttribute("poster") : "",
-        };
-      });
-
-      var overlay = document.createElement("div");
-      overlay.className = "lightbox video-lightbox";
-      overlay.innerHTML =
-        '<button type="button" class="lightbox-anterior" aria-label="Vídeo anterior">&#10094;</button>' +
-        '<video class="lightbox-video" controls playsinline></video>' +
-        '<button type="button" class="lightbox-proxima" aria-label="Próximo vídeo">&#10095;</button>' +
-        '<button type="button" class="lightbox-fechar" aria-label="Fechar">&times;</button>';
-      document.body.appendChild(overlay);
-
-      var videoEl = overlay.querySelector(".lightbox-video");
-      var btnFechar = overlay.querySelector(".lightbox-fechar");
-      var btnAnterior = overlay.querySelector(".lightbox-anterior");
-      var btnProxima = overlay.querySelector(".lightbox-proxima");
-      var indiceAtual = 0;
-
-      function mostrar(indice) {
-        indiceAtual = (indice + itens.length) % itens.length;
-        var item = itens[indiceAtual];
-        videoEl.pause();
-        videoEl.setAttribute("poster", item.poster);
-        videoEl.src = item.src;
-        videoEl.currentTime = 0;
-        videoEl.play().catch(function () {});
-      }
-
-      function abrir(indice) {
-        thumbs.forEach(function (thumb) {
-          var v = thumb.querySelector("video");
-          if (v) v.pause();
-        });
-        mostrar(indice);
-        overlay.classList.add("aberto");
-        document.body.classList.add("lightbox-aberto");
-      }
-
-      function fechar() {
-        videoEl.pause();
-        videoEl.removeAttribute("src");
-        videoEl.load();
-        overlay.classList.remove("aberto");
-        document.body.classList.remove("lightbox-aberto");
-      }
-
-      thumbs.forEach(function (thumb, indice) {
-        thumb.addEventListener("click", function () {
-          abrir(indice);
-        });
-        thumb.addEventListener("keydown", function (e) {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            abrir(indice);
-          }
-        });
-      });
-
-      btnFechar.addEventListener("click", fechar);
-      btnAnterior.addEventListener("click", function () {
-        mostrar(indiceAtual - 1);
-      });
-      btnProxima.addEventListener("click", function () {
-        mostrar(indiceAtual + 1);
-      });
-
-      overlay.addEventListener("click", function (e) {
-        if (e.target === overlay) fechar();
-      });
-
-      document.addEventListener("keydown", function (e) {
-        if (!overlay.classList.contains("aberto")) return;
-        if (e.key === "Escape") fechar();
-        if (e.key === "ArrowLeft") mostrar(indiceAtual - 1);
-        if (e.key === "ArrowRight") mostrar(indiceAtual + 1);
       });
     })();
 

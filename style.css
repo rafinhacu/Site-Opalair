@@ -20,6 +20,12 @@
       --sombra: 0 22px 55px rgba(7, 27, 54, 0.14);
       --sombra-suave: 0 14px 36px rgba(7, 27, 54, 0.08);
       --radius: 16px;
+
+      /* Escala tipográfica: redefinida nos breakpoints em vez de override por seletor */
+      --fs-h2: clamp(1.6rem, 2.2vw, 2.15rem);
+      --fs-h3: 1.2rem;
+      --fs-corpo: 1rem;
+      --fs-num: clamp(1.5rem, 1.8vw, 1.85rem);
     }
 
     html {
@@ -31,7 +37,7 @@
       font-family: "Barlow", Arial, sans-serif;
       color: var(--texto);
       background: var(--branco);
-      font-size: 19px;
+      font-size: 16.5px;
       line-height: 1.7;
       overflow-x: hidden;
     }
@@ -60,7 +66,7 @@
 
     header {
       width: calc(100% - 40px);
-      max-width: 1800px;
+      max-width: 1280px;
       margin: 0 auto;
       min-height: 84px;
       display: flex;
@@ -88,7 +94,7 @@
     /* Cabeçalho usa a geométrica da logo, não a Oswald das demais seções */
     .logo-area h1 {
       font-family: "Poppins", "Century Gothic", Arial, sans-serif;
-      font-size: 1.34rem;
+      font-size: 1.2rem;
       letter-spacing: 0.09em;
       color: var(--azul);
       line-height: 1;
@@ -110,7 +116,7 @@
       align-items: center;
       gap: 22px;
       color: var(--azul);
-      font-size: 1.12rem;
+      font-size: 1rem;
       font-weight: 600;
       white-space: nowrap;
     }
@@ -274,7 +280,7 @@
     .hero h2 {
       font-family: "Playfair Display", "Georgia", serif;
       max-width: 900px;
-      font-size: clamp(2rem, 3.4vw, 3.1rem);
+      font-size: clamp(2rem, 3.2vw, 2.9rem);
       line-height: 1.18;
       font-weight: 600;
       margin-bottom: 20px;
@@ -386,8 +392,8 @@
     }
 
     .faixa-info {
-      width: min(1420px, calc(100% - 60px));
-      max-width: 1420px;
+      width: min(1280px, calc(100% - 60px));
+      max-width: 1280px;
       margin: -46px auto 0;
       padding: 0;
       position: relative;
@@ -404,7 +410,7 @@
     }
 
     .faixa-info div {
-      padding: 26px 32px;
+      padding: 22px 28px;
       text-align: center;
       border-right: 1px solid var(--linha);
       display: flex;
@@ -424,28 +430,28 @@
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-size: clamp(2.3rem, 2.75vw, 3.05rem);
+      font-size: var(--fs-num);
       display: block;
       width: 100%;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       line-height: 1.15;
     }
 
     .faixa-info p {
       color: var(--cinza);
-      font-size: clamp(1.32rem, 1.5vw, 1.58rem);
-      max-width: 300px;
+      font-size: var(--fs-corpo);
+      max-width: 320px;
       margin: 0 auto;
-      line-height: 1.55;
+      line-height: 1.5;
     }
 
     section {
-      padding: 118px 0;
+      padding: 84px 0;
     }
 
     .container {
       width: calc(100% - 40px);
-      max-width: 1800px;
+      max-width: 1280px;
       margin: 0 auto;
     }
 
@@ -480,7 +486,7 @@
       font-family: "Oswald", Arial, sans-serif;
       color: var(--dourado-texto);
       text-transform: uppercase;
-      font-size: 1.05rem;
+      font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 0.18em;
       margin-bottom: 20px;
@@ -516,7 +522,7 @@
     h2 {
       font-family: "Playfair Display", "Georgia", serif;
       color: var(--azul);
-      font-size: clamp(1.7rem, 2.6vw, 2.5rem);
+      font-size: var(--fs-h2);
       line-height: 1.2;
       font-weight: 600;
       margin-bottom: 18px;
@@ -527,13 +533,13 @@
     .descricao-servicos {
       color: var(--cinza);
       margin-bottom: 18px;
-      font-size: 1.05rem;
+      font-size: var(--fs-corpo);
     }
 
     .lista-destaques {
       display: grid;
       gap: 12px;
-      margin-top: 26px;
+      margin: 26px 0;
       list-style: none;
     }
 
@@ -543,7 +549,7 @@
       align-items: flex-start;
       color: var(--texto);
       font-weight: 600;
-      font-size: 1.18rem;
+      font-size: var(--fs-corpo);
     }
 
     .lista-destaques li::before {
@@ -575,7 +581,7 @@
     .sobre-numeros strong {
       display: block;
       font-family: "Oswald", Arial, sans-serif;
-      font-size: clamp(2.1rem, 3vw, 2.85rem);
+      font-size: var(--fs-num);
       font-weight: 600;
       line-height: 1;
       color: var(--azul);
@@ -598,7 +604,7 @@
 
     .imagem img {
       width: 100%;
-      height: 520px;
+      height: 440px;
       object-fit: cover;
       object-position: center center;
       border-radius: var(--radius);
@@ -617,7 +623,7 @@
 
     .sobre-grid .imagem img {
       height: 100%;
-      min-height: 620px;
+      min-height: 520px;
       object-position: center center;
     }
 
@@ -680,7 +686,7 @@
       font-family: "Playfair Display", "Georgia", serif;
       font-weight: 600;
       color: var(--azul);
-      font-size: 1.4rem;
+      font-size: var(--fs-h3);
       margin-bottom: 12px;
     }
 
@@ -688,7 +694,7 @@
     .passo p,
     .video-box p {
       color: var(--cinza);
-      font-size: 1.2rem;
+      font-size: var(--fs-corpo);
     }
 
     .card::before {
@@ -742,7 +748,7 @@
       align-items: flex-start;
       gap: 10px;
       color: var(--texto);
-      font-size: 1.02rem;
+      font-size: var(--fs-corpo);
       font-weight: 500;
       line-height: 1.45;
     }
@@ -770,7 +776,7 @@
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-size: 2.65rem;
+      font-size: var(--fs-num);
       font-weight: 600;
       display: block;
       margin-bottom: 14px;
@@ -801,44 +807,13 @@
       padding: 14px 14px 24px;
     }
 
-    .video-thumb {
-      position: relative;
-      display: block;
-      margin-bottom: 22px;
-      cursor: pointer;
-    }
-
-    .video-thumb::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      margin: auto;
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background-color: rgba(7, 27, 54, 0.5);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon points='6,4 20,12 6,20' fill='white'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: 55% center;
-      background-size: 26px;
-      border: 2px solid rgba(255, 255, 255, 0.85);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-      pointer-events: none;
-      transition: transform 0.2s ease, background-color 0.2s ease;
-    }
-
-    .video-thumb:hover::after,
-    .video-thumb:focus-visible::after {
-      transform: scale(1.08);
-      background-color: rgba(200, 164, 93, 0.85);
-    }
-
     .video-box video {
       width: 100%;
-      height: 440px;
+      height: auto;
+      aspect-ratio: 3 / 4;
       object-fit: cover;
       border-radius: 12px;
-      display: block;
+      margin-bottom: 22px;
       background: rgba(255, 255, 255, 0.08);
     }
 
@@ -864,7 +839,8 @@
     }
 
     .galeria img {
-      height: clamp(260px, 18vw, 350px);
+      height: auto;
+      aspect-ratio: 4 / 3;
       width: 100%;
       object-fit: cover;
       border-radius: 12px;
@@ -898,16 +874,6 @@
       max-height: 100%;
       width: auto;
       height: auto;
-      border-radius: 10px;
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
-    }
-
-    .lightbox-video {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      background: #000;
       border-radius: 10px;
       box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
     }
@@ -1015,7 +981,7 @@
 
     .orcamento-texto > p {
       color: rgba(255, 255, 255, 0.74);
-      font-size: 1.26rem;
+      font-size: var(--fs-corpo);
       margin-bottom: 8px;
     }
 
@@ -1087,7 +1053,7 @@
       background: rgba(255, 255, 255, 0.05);
       color: rgba(255, 255, 255, 0.82);
       font-weight: 600;
-      font-size: 1.04rem;
+      font-size: var(--fs-corpo);
       cursor: pointer;
       transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
     }
@@ -1129,7 +1095,7 @@
       background: rgba(255, 255, 255, 0.05);
       color: var(--branco);
       font-family: "Barlow", Arial, sans-serif;
-      font-size: 1.06rem;
+      font-size: var(--fs-corpo);
       transition: border-color 0.25s ease, background 0.25s ease;
     }
 
@@ -1216,7 +1182,7 @@
       cursor: pointer;
       list-style: none;
       font-family: "Playfair Display", "Georgia", serif;
-      font-size: 1.24rem;
+      font-size: 1.1rem;
       font-weight: 600;
       color: var(--azul);
       transition: color 0.25s ease;
@@ -1230,7 +1196,7 @@
       content: "+";
       flex: 0 0 auto;
       font-family: "Oswald", Arial, sans-serif;
-      font-size: 1.7rem;
+      font-size: 1.45rem;
       line-height: 1;
       color: var(--dourado);
       transition: transform 0.25s ease;
@@ -1247,7 +1213,7 @@
     .faq-item p {
       padding: 0 26px 24px;
       color: var(--cinza);
-      font-size: 1.14rem;
+      font-size: var(--fs-corpo);
       line-height: 1.65;
     }
 
@@ -1289,7 +1255,7 @@
       display: block;
       font-family: "Oswald", Arial, sans-serif;
       color: var(--dourado-claro);
-      font-size: 1.1rem;
+      font-size: 1rem;
       letter-spacing: 0.14em;
       font-weight: 500;
       text-transform: uppercase;
@@ -1298,7 +1264,7 @@
 
     .contato-item p {
       color: rgba(255, 255, 255, 0.86);
-      font-size: clamp(0.95rem, 1.6vw, 1.26rem);
+      font-size: 1rem;
       margin: 0;
       overflow-wrap: break-word;
     }
@@ -1317,7 +1283,7 @@
       color: rgba(255, 255, 255, 0.66);
       text-align: center;
       padding: 26px 20px;
-      font-size: 1.08rem;
+      font-size: 0.95rem;
     }
 
     .footer-cred {
@@ -1336,8 +1302,8 @@
       justify-content: center;
       background: var(--verde);
       color: var(--branco);
-      padding: 19px 30px;
-      font-size: 1.22rem;
+      padding: 14px 22px;
+      font-size: 1rem;
       border-radius: 999px;
       font-weight: 800;
       box-shadow: 0 16px 36px rgba(37, 211, 102, 0.4);
@@ -1488,23 +1454,6 @@
         grid-template-columns: 1fr;
         gap: 12px;
       }
-
-      .faixa-info strong {
-        font-size: 1.6rem;
-      }
-
-      .faixa-info p,
-      .texto p,
-      .descricao-servicos,
-      .card p,
-      .passo p,
-      .video-box p {
-        font-size: 1.02rem;
-      }
-
-      .video-box video {
-        height: 400px;
-      }
     }
 
     @media (max-width: 620px) {
@@ -1632,10 +1581,6 @@
         border-top: 1px solid var(--linha);
       }
 
-      .faixa-info strong {
-        font-size: 1.54rem;
-      }
-
       h2 {
         font-size: clamp(1.75rem, 8.5vw, 2.35rem);
       }
@@ -1652,7 +1597,6 @@
       .texto p,
       .descricao-servicos,
       .lista-destaques li {
-        font-size: 1.04rem;
         line-height: 1.65;
       }
 
@@ -1670,7 +1614,6 @@
       .card p,
       .passo p,
       .video-box p {
-        font-size: 1.01rem;
         line-height: 1.6;
       }
 
@@ -1723,11 +1666,6 @@
         height: auto;
         min-height: 0;
         aspect-ratio: 4 / 3;
-      }
-
-      .video-box video {
-        height: auto;
-        aspect-ratio: 4 / 5;
       }
 
       .sobre-numeros {
@@ -1897,11 +1835,6 @@
       .sobre-grid .imagem img {
         height: auto;
         aspect-ratio: 4 / 3;
-      }
-
-      .video-box video {
-        height: auto;
-        aspect-ratio: 4 / 5;
       }
     }
 
