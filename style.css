@@ -218,6 +218,10 @@
         radial-gradient(120% 90% at 50% 42%, rgba(4, 13, 26, 0.55) 0%, rgba(4, 13, 26, 0.3) 45%, rgba(4, 13, 26, 0.1) 72%, rgba(4, 13, 26, 0) 100%),
         linear-gradient(0deg, rgba(4, 13, 26, 0.55) 0%, rgba(4, 13, 26, 0) 34%),
         url("fundo5.jpg") center/cover no-repeat;
+      background-image:
+        radial-gradient(120% 90% at 50% 42%, rgba(4, 13, 26, 0.55) 0%, rgba(4, 13, 26, 0.3) 45%, rgba(4, 13, 26, 0.1) 72%, rgba(4, 13, 26, 0) 100%),
+        linear-gradient(0deg, rgba(4, 13, 26, 0.55) 0%, rgba(4, 13, 26, 0) 34%),
+        image-set(url("fundo5.webp") type("image/webp"), url("fundo5.jpg") type("image/jpeg"));
       color: var(--branco);
       overflow: hidden;
     }
@@ -776,6 +780,9 @@
       background:
         linear-gradient(135deg, rgba(7, 27, 54, 0.98), rgba(13, 51, 95, 0.96)),
         url("hangar.jpg") center/cover no-repeat;
+      background-image:
+        linear-gradient(135deg, rgba(7, 27, 54, 0.98), rgba(13, 51, 95, 0.96)),
+        image-set(url("hangar.webp") type("image/webp"), url("hangar.jpg") type("image/jpeg"));
       color: var(--branco);
     }
 
@@ -1206,6 +1213,9 @@
       background:
         linear-gradient(135deg, rgba(7, 27, 54, 0.96), rgba(13, 51, 95, 0.94)),
         url("aviao11.jpg") center/cover no-repeat;
+      background-image:
+        linear-gradient(135deg, rgba(7, 27, 54, 0.96), rgba(13, 51, 95, 0.94)),
+        image-set(url("aviao11.webp") type("image/webp"), url("aviao11.jpg") type("image/jpeg"));
       color: var(--branco);
       text-align: center;
     }

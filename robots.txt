@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://voeopalair.com.br/sitemap.xml
